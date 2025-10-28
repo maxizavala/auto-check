@@ -11,7 +11,8 @@ const Menu = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                     <Nav.Link as={Link} to="/">Home</Nav.Link>
-                    <Nav.Link as={Link} to="pokeapi">Pokemons</Nav.Link>
+                    <Nav.Link as={Link} to="perfil">Perfil</Nav.Link>
+                    <Nav.Link as={Link} to="garage">Garage</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
             </Container>
