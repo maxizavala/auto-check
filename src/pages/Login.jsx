@@ -12,8 +12,10 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const validUser = users.find(user =>
-            user.username === username && user.password === password
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+
+        const validUser = users.find(
+            (user) => user.username === username && user.password === password
         );
 
         if (validUser) {
@@ -25,7 +27,7 @@ const Login = () => {
 
     return (
         <>
-            <Card style={{ maxWidth: "400px", margin: "5rem auto", padding: "1rem" }}>
+            <Card style={{ maxWidth: "400px", margin: "5rem auto", padding: "1rem", backgroundColor: "#f7f3fd" }}>
                 <Card.Body>
                 <h3 className="text-center mb-4">Inicio de sesión</h3>
 
@@ -41,17 +43,26 @@ const Login = () => {
                     </Form.Group>
 
                     <Form.Group className="mb-4">
-                    <Form.Label>Contraseña</Form.Label>
-                    <Form.Control
-                        type="password"
-                        placeholder="Ingrese su contraseña"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
+                        <Form.Label>Contraseña</Form.Label>
+                        <Form.Control
+                            type="password"
+                            placeholder="Ingrese su contraseña"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit" className="w-100">
+                    <Button variant="dark" type="submit" className="w-100">
                         Ingresar
+                    </Button>
+
+                    <Button
+                        variant="warning"
+                        type="button"
+                        className="w-100 mt-3"
+                        onClick={() => navigate("/registrar")}
+                        >
+                        Registrarse
                     </Button>
                 </Form>
                 </Card.Body>

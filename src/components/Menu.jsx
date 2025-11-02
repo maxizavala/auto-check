@@ -8,7 +8,7 @@ const Menu = () => {
     return (
         <Navbar expand="lg" className="my-navbar">
             <Container>
-                <Navbar.Brand href="/">
+                <Navbar.Brand>
                     <img
                         src={logo}
                         alt="Logo"
