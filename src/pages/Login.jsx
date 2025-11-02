@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, Form, Button, Modal } from "react-bootstrap";
-import users from "../data/users.json";
+import { useAuth } from "../context/AuthContext";
+
+
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [showError, setShowError] = useState(false);
     const navigate = useNavigate();
+
+    const { login } = useAuth();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,7 +23,8 @@ const Login = () => {
         );
 
         if (validUser) {
-            navigate("/garage");
+            login(validUser.username);
+            navigate("/perfil");
         } else {
             setShowError(true);
         }
@@ -61,7 +66,7 @@ const Login = () => {
                         type="button"
                         className="w-100 mt-3"
                         onClick={() => navigate("/registrar")}
-                        >
+                    >
                         Registrarse
                     </Button>
                 </Form>

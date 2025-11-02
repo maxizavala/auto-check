@@ -8,6 +8,8 @@ import Login from './pages/Login';
 import Signin from './pages/Signin';
 import { useEffect } from 'react';
 import usersData from "./data/users.json";
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoutes';
 
 
 const App = () => {
@@ -21,19 +23,47 @@ const App = () => {
 
 
 	return (
-        <BrowserRouter>
-            <Menu />
-            <Container>
-                <Routes>
-                    <Route path="/" element={ <Login /> } />
-                    <Route path="/registrar" element={ <Signin /> } />
-                    <Route path="/perfil" element={ <Perfil /> } />
-                    <Route path="/garage" element={ <Garage /> } />
-                    <Route path="/taller" element={ <Taller /> } />
-                    <Route path="*" element={ <h1> Pagina Inexistente </h1> } />
-                </Routes>
-            </Container>
-        </BrowserRouter>
+        <AuthProvider>
+            <BrowserRouter>
+                <Menu />
+                <Container>
+                    <Routes>
+                        <Route path="/" element={ <Login /> } />
+                        <Route path="/login" element={ <Login /> } />
+                        <Route path="/registrar" element={ <Signin /> } />
+                        
+                        <Route
+                            path="/perfil"
+                            element={
+                            <ProtectedRoute>
+                                <Perfil />
+                            </ProtectedRoute>
+                            }
+                        />
+
+                        <Route
+                            path="/garage"
+                            element={
+                            <ProtectedRoute>
+                                <Garage />
+                            </ProtectedRoute>
+                            }
+                        />
+
+                        <Route
+                            path="/taller"
+                            element={
+                            <ProtectedRoute>
+                                <Taller />
+                            </ProtectedRoute>
+                            }
+                        />
+
+                        <Route path="*" element={ <h1> Pagina Inexistente </h1> } />
+                    </Routes>
+                </Container>
+            </BrowserRouter>
+        </AuthProvider>
     )
 }
 

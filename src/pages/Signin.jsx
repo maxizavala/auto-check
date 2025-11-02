@@ -82,6 +82,15 @@ const Signin = () => {
                 <Button variant="warning" type="submit" className="w-100">
                     Registrate
                 </Button>
+
+                <Button
+                    variant="dark"
+                    type="button"
+                    className="w-100 mt-3"
+                    onClick={() => navigate("/")}
+                    >
+                    Ingresar
+                </Button>
             </Form>
             </Card.Body>
         </Card>
