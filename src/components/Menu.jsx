@@ -1,10 +1,19 @@
-import { Container, Nav, Navbar } from "react-bootstrap"
-import { Link } from 'react-router-dom';
+import { Container, Nav, Navbar, Button } from "react-bootstrap"
+import { Link, useNavigate } from 'react-router-dom';
 import logo from "../assets/logo.png";
+import { useAuth } from "../context/AuthContext";
 import "./Menu.css";
 
 
 const Menu = () => {
+    const { user, logout } = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        navigate("/login");
+    };
+        
     return (
         <Navbar expand="lg" className="my-navbar">
             <Container>
@@ -22,6 +31,13 @@ const Menu = () => {
                     <Nav.Link as={Link} to="perfil">Perfil</Nav.Link>
                     <Nav.Link as={Link} to="garage">Garage</Nav.Link>
                 </Nav>
+
+                {user && (
+                    <Button variant="danger" size="sm" onClick={handleLogout}>
+                    Salir
+                    </Button>
+                )}
+
                 </Navbar.Collapse>
             </Container>
         </Navbar>
