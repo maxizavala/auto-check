@@ -4,6 +4,7 @@ import Menu from './components/Menu';
 import Garage from './pages/Garage';
 import Perfil from './pages/Perfil';
 import Taller from './pages/Taller';
+import Login from './pages/Login';
 
 
 const App = () => {
@@ -13,7 +14,7 @@ const App = () => {
             <Menu />
             <Container>
                 <Routes>
-                    <Route path="/" element={ <h1> Pagina principal </h1> } />
+                    <Route path="/" element={ <Login /> } />
                     <Route path="/perfil" element={ <Perfil /> } />
                     <Route path="/garage" element={ <Garage /> } />
                     <Route path="/taller" element={ <Taller /> } />
