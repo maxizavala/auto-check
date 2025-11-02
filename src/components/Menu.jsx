@@ -1,12 +1,21 @@
 import { Container, Nav, Navbar } from "react-bootstrap"
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import logo from "../assets/logo.png";
+import "./Menu.css";
 
 
 const Menu = () => {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg" className="my-navbar">
             <Container>
-                <Navbar.Brand href="/">AutoCheck</Navbar.Brand>
+                <Navbar.Brand href="/">
+                    <img
+                        src={logo}
+                        alt="Logo"
+                        height="40"
+                        className="d-inline-block align-top"
+                    />
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
