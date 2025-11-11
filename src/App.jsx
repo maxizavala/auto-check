@@ -7,19 +7,24 @@ import Taller from './pages/Taller';
 import Login from './pages/Login';
 import Signin from './pages/Signin';
 import { useEffect } from 'react';
-import usersData from "./data/users.json";
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoutes';
 import AutoDetail from './pages/AutoDetail';
+import usersData from "./data/users.json";
 
 
 const App = () => {
 
     useEffect(() => {
+        //localStorage.clear()
+
         const storedUsers = localStorage.getItem("users");
         if (!storedUsers) {
             localStorage.setItem("users", JSON.stringify(usersData));
         }
+
+        const checkUsers = JSON.parse(localStorage.getItem("users"));
+        console.log("Usuarios y talleres cargados:", checkUsers);
     }, []);
 
 

@@ -1,4 +1,29 @@
 [
-  { "username": "admin", "password": "1234" },
-  { "username": "maxi", "password": "zeta" }
+  {
+    "id": 1,
+    "username": "pepe64",
+    "password": "pepe123",
+    "tipo": "usuario"
+  },
+  {
+    "id": 2,
+    "username": "maxi",
+    "password": "zeta",
+    "tipo": "usuario"
+  },
+  {
+    "id": 9001,
+    "username": "taller_mario",
+    "password": "mario123",
+    "tipo": "taller",
+    "nombreFantasia": "Mecánica Mario"
+  },
+  {
+    "id": 9002,
+    "username": "taller_juan",
+    "password": "juan 123",
+    "tipo": "taller",
+    "nombreFantasia": "Suspensiones Juan"
+  }
 ]
+
