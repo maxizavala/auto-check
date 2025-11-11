@@ -87,7 +87,7 @@ const Signin = () => {
                     variant="dark"
                     type="button"
                     className="w-100 mt-3"
-                    onClick={() => navigate("/")}
+                    onClick={() => navigate("/login")}
                     >
                     Ingresar
                 </Button>

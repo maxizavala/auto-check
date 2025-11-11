@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import usersData from "./data/users.json";
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoutes';
+import AutoDetail from './pages/AutoDetail';
 
 
 const App = () => {
@@ -44,10 +45,15 @@ const App = () => {
                         <Route
                             path="/garage"
                             element={
-                            <ProtectedRoute>
-                                <Garage />
-                            </ProtectedRoute>
+                                <ProtectedRoute>
+                                    <Garage />
+                                </ProtectedRoute>
                             }
+                        />
+
+                        <Route 
+                            path="/auto/:id" 
+                            element={<AutoDetail />} 
                         />
 
                         <Route
