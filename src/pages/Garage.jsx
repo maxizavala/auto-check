@@ -18,9 +18,10 @@ const Garage = () => {
     // Cargar autos
     useEffect(() => {
         const db = JSON.parse(localStorage.getItem("cars")) || [];
-        const userCars = db.filter((c) => c.owner === user);
+        const userCars = db.filter(car => car.owner === user?.username); // <--- usar db
         setCars(userCars);
     }, [user]);
+
 
     // Guardar auto
     const handleSaveCar = () => {
@@ -28,7 +29,7 @@ const Garage = () => {
 
         const newCar = {
             id: Date.now(),
-            owner: user,
+            owner: user.username, // usar el username del objeto user
             brand,
             model,
             year,
@@ -38,14 +39,17 @@ const Garage = () => {
         db.push(newCar);
         localStorage.setItem("cars", JSON.stringify(db));
 
-        setCars(db.filter((c) => c.owner === user));
+        // actualizar el state filtrando solo los autos del usuario logueado
+        setCars(db.filter(c => c.owner === user.username));
 
+        // limpiar formulario y cerrar modal
         setShowModal(false);
         setBrand("");
         setModel("");
         setYear("");
         setPlate("");
     };
+
 
     return (
         <>

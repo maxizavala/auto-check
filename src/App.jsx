@@ -13,10 +13,10 @@ import AutoDetail from './pages/AutoDetail';
 import usersData from "./data/users.json";
 
 
+
 const App = () => {
 
     useEffect(() => {
-        //localStorage.clear()
 
         const storedUsers = localStorage.getItem("users");
         if (!storedUsers) {

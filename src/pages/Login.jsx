@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, Form, Button, Modal } from "react-bootstrap";
 import { useAuth } from "../context/AuthContext";
+import './Login.css';
 
 
 
@@ -23,15 +24,19 @@ const Login = () => {
         );
 
         if (validUser) {
-            login(validUser.username);
-            navigate("/perfil");
+            login(validUser);
+            if (validUser.tipo === "taller") {
+                navigate("/taller");
+            } else {
+                navigate("/garage");
+            }
         } else {
             setShowError(true);
         }
     };
 
     return (
-        <>
+        <div className="hero-section">
             <Card style={{ maxWidth: "400px", margin: "5rem auto", padding: "1rem", backgroundColor: "#f7f3fd" }}>
                 <Card.Body>
                 <h3 className="text-center mb-4">Inicio de sesión</h3>
@@ -84,7 +89,7 @@ const Login = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-        </>
+        </div>
     );
 }
 
