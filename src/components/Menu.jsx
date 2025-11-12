@@ -17,7 +17,7 @@ const Menu = () => {
     return (
         <Navbar expand="lg" className="my-navbar">
             <Container>
-                <Navbar.Brand as={Link} to="/perfil">
+                <Navbar.Brand as={Link} to="/">
                     <img
                         src={logo}
                         alt="Logo"

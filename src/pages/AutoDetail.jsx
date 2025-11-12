@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Button, Modal, Form } from "react-bootstrap";
+import { Button, Modal, Form, Container } from "react-bootstrap";
 import { useAuth } from "../context/AuthContext";
 import usersData from "../data/users.json";
 
@@ -99,7 +99,7 @@ const AutoDetail = () => {
     };
 
     return (
-        <>
+        <Container>
             <h2 className="mt-4 mb-4">
                 {car.brand} {car.model} - {car.year} ({car.plate})
             </h2>
@@ -217,7 +217,7 @@ const AutoDetail = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-        </>
+        </Container>
     );
 };
 

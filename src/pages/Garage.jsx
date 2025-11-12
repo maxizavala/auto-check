@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, Button, Modal, Form, Row, Col } from "react-bootstrap";
+import { Card, Button, Modal, Form, Row, Col, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
@@ -18,7 +18,7 @@ const Garage = () => {
     // Cargar autos
     useEffect(() => {
         const db = JSON.parse(localStorage.getItem("cars")) || [];
-        const userCars = db.filter(car => car.owner === user?.username); // <--- usar db
+        const userCars = db.filter(car => car.owner === user?.username);
         setCars(userCars);
     }, [user]);
 
@@ -29,7 +29,7 @@ const Garage = () => {
 
         const newCar = {
             id: Date.now(),
-            owner: user.username, // usar el username del objeto user
+            owner: user.username,
             brand,
             model,
             year,
@@ -39,10 +39,8 @@ const Garage = () => {
         db.push(newCar);
         localStorage.setItem("cars", JSON.stringify(db));
 
-        // actualizar el state filtrando solo los autos del usuario logueado
         setCars(db.filter(c => c.owner === user.username));
 
-        // limpiar formulario y cerrar modal
         setShowModal(false);
         setBrand("");
         setModel("");
@@ -52,7 +50,7 @@ const Garage = () => {
 
 
     return (
-        <>
+        <Container>
             <h2 className="mt-4 mb-3">Mi Garage</h2>
 
             <Button variant="success" onClick={() => setShowModal(true)}>
@@ -136,7 +134,7 @@ const Garage = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-        </>
+        </Container>
     );
 };
 

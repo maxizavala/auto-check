@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { useAuth } from "../context/AuthContext";
 
 const Taller = () => {
@@ -42,7 +42,7 @@ const Taller = () => {
     const validados = services.filter(s => s.validado);
 
     return (
-        <>
+        <Container>
             <h2 className="mt-4 mb-4">Panel del Taller</h2>
 
             <h4 className="mt-4">🟡 Servicios pendientes de validación</h4>
@@ -75,7 +75,7 @@ const Taller = () => {
                     </li>
                 ))}
             </ul>
-        </>
+        </Container>
     );
 };
 

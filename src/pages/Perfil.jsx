@@ -1,10 +1,10 @@
-import React from 'react'
+import { Container } from "react-bootstrap"
 
 const Perfil = () => {
     return (
-        <div>
+        <Container>
             <h1>Perfil</h1>
-        </div>
+        </Container>
     )
 }
 
