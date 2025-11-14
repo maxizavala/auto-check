@@ -80,7 +80,7 @@ const AutoDetail = () => {
 
     if (!car) return <h2>Auto no encontrado</h2>;
 
-    const isOwner = car.owner === user;
+    const isOwner = user && car.owner === user.username;
 
     const grouped = CATEGORIES.reduce((acc, cat) => {
         acc[cat] = services
