@@ -18,6 +18,7 @@ import usersData from "./data/users.json";
 const App = () => {
 
     useEffect(() => {
+        
         const storedUsers = localStorage.getItem("users");
         if (!storedUsers) {
             localStorage.setItem("users", JSON.stringify(usersData));
@@ -33,7 +34,6 @@ const App = () => {
                     <Route path="/" element={ <Home /> } />
                     <Route path="/login" element={ <Login /> } />
                     <Route path="/registrar" element={ <Signin /> } />
-                    <Route path="/admin" element={ <Admin /> } />
                     
                     <Route
                         path="/perfil"
@@ -64,6 +64,15 @@ const App = () => {
                         <ProtectedRoute>
                             <Taller />
                         </ProtectedRoute>
+                        }
+                    />
+
+                    <Route
+                        path="/admin"
+                        element={
+                            <ProtectedRoute onlyAdmin={true}>
+                                <Admin />
+                            </ProtectedRoute>
                         }
                     />
 

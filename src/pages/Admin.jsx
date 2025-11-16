@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Button, Modal, Form, Table, Alert } from "react-bootstrap";
-import usuariosJSON from "../data/users.json";
 
 const estadisticas = {
     usuarios: 42,
@@ -22,20 +21,16 @@ const Admin = () => {
     });
 
     useEffect(() => {
-        let lista;
-
         const guardados = localStorage.getItem("users");
+        let lista = [];
 
         if (guardados) {
             try {
                 lista = JSON.parse(guardados);
-                if (!Array.isArray(lista)) lista = usuariosJSON;
+                if (!Array.isArray(lista)) lista = [];
             } catch {
-                lista = usuariosJSON;
+                lista = [];
             }
-        } else {
-            lista = usuariosJSON;
-            localStorage.setItem("users", JSON.stringify(usuariosJSON));
         }
 
         setUsuarios(lista);
@@ -161,3 +156,4 @@ const Admin = () => {
 };
 
 export default Admin;
+

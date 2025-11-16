@@ -15,7 +15,7 @@
     "id": 2,
     "username": "maxi",
     "password": "zeta",
-    "tipo": "usuario",
+    "tipo": "admin",
     "nombre": "Maximiliano",
     "apellido": "Zavala",
     "provincia": "Santa Fe",
