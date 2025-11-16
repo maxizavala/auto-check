@@ -37,11 +37,16 @@ const Menu = () => {
                     )}
                 </Nav>
 
-                {user && (
-                    <Button variant="danger" size="sm" onClick={handleLogout}>
-                    Salir
+                {user ? (
+                    <Button variant="dark" size="sm" onClick={handleLogout}>
+                        Cerrar sesión
+                    </Button>
+                ) : (
+                    <Button variant="warning" size="sm" onClick={() => navigate("/login")}>
+                        Iniciar sesión
                     </Button>
                 )}
+
 
                 </Navbar.Collapse>
             </Container>

@@ -75,7 +75,7 @@ const Admin = () => {
             <Row className="mb-3">
                 <Col><h2>Panel de Administrador</h2></Col>
                 <Col className="text-end">
-                    <Button onClick={() => setMostrarModal(true)}>Agregar Taller</Button>
+                    <Button onClick={() => setMostrarModal(true)} variant="warning">Agregar Taller</Button>
                 </Col>
             </Row>
 

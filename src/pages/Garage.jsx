@@ -53,7 +53,7 @@ const Garage = () => {
         <Container>
             <h2 className="mt-4 mb-3">Mi Garage</h2>
 
-            <Button variant="success" onClick={() => setShowModal(true)}>
+            <Button variant="warning" onClick={() => setShowModal(true)}>
                 + Agregar Auto
             </Button>
 
@@ -71,7 +71,7 @@ const Garage = () => {
                                 </Card.Text>
 
                                 <Button
-                                    variant="primary"
+                                    variant="dark"
                                     onClick={() => navigate(`/auto/${car.id}`)}
                                 >
                                     Ver detalles
