@@ -28,8 +28,10 @@ const Menu = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link as={Link} to="perfil">Perfil</Nav.Link>
-                    <Nav.Link as={Link} to="garage">Garage</Nav.Link>
+                    <Nav.Link as={Link} to="perfil">Mi Perfil</Nav.Link>
+                    <Nav.Link as={Link} to="garage">Mi Garage</Nav.Link>
+                    <Nav.Link as={Link} to="/">Buscá un auto</Nav.Link>
+                    <Nav.Link as={Link} to="autos">Comprá un auto</Nav.Link>
                 </Nav>
 
                 {user && (

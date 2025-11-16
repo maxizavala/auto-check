@@ -17,14 +17,10 @@ import usersData from "./data/users.json";
 const App = () => {
 
     useEffect(() => {
-
         const storedUsers = localStorage.getItem("users");
         if (!storedUsers) {
             localStorage.setItem("users", JSON.stringify(usersData));
         }
-
-        const checkUsers = JSON.parse(localStorage.getItem("users"));
-        console.log("Usuarios y talleres cargados:", checkUsers);
     }, []);
 
 

@@ -3,27 +3,38 @@
     "id": 1,
     "username": "pepe64",
     "password": "pepe123",
-    "tipo": "usuario"
+    "tipo": "usuario",
+    "nombre": "Pepe",
+    "apellido": "Gómez",
+    "provincia": "Buenos Aires",
+    "ciudad": "La Plata",
+    "localidad": "Tolosa",
+    "whatsapp": "221654897"
   },
   {
     "id": 2,
     "username": "maxi",
     "password": "zeta",
-    "tipo": "usuario"
+    "tipo": "usuario",
+    "nombre": "Maximiliano",
+    "apellido": "Zavala",
+    "provincia": "Santa Fe",
+    "ciudad": "Rosario",
+    "localidad": "Centro",
+    "whatsapp": "341779900"
   },
   {
     "id": 9001,
     "username": "taller_mario",
     "password": "mario123",
     "tipo": "taller",
-    "nombreFantasia": "Mecánica Mario"
+    "nombre": "Mecánica Mario"
   },
   {
     "id": 9002,
     "username": "taller_juan",
-    "password": "juan 123",
+    "password": "juan123",
     "tipo": "taller",
-    "nombreFantasia": "Suspensiones Juan"
+    "nombre": "Suspensiones Juan"
   }
 ]
-
