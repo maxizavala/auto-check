@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Signin from './pages/Signin';
 import AutoDetail from './pages/AutoDetail';
 import Home from './pages/Home';
+import Admin from './pages/Admin';
 import usersData from "./data/users.json";
 
 
@@ -32,6 +33,7 @@ const App = () => {
                     <Route path="/" element={ <Home /> } />
                     <Route path="/login" element={ <Login /> } />
                     <Route path="/registrar" element={ <Signin /> } />
+                    <Route path="/admin" element={ <Admin /> } />
                     
                     <Route
                         path="/perfil"
