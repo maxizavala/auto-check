@@ -7,19 +7,19 @@
         "anio": 2018,
         "km": 82000,
         "precio": 16500,
-        "img": "01.jpg",
-        "whatsapp": 1122334455
+        "whatsapp": 1122334455,
+        "imgs": ["01.jpg", "02.jpg", "03.jpg", "04.jpg"]
     },
     {
         "id": 2,
-        "nombre": "Honda Civic 2020",
+        "nombre": "Honda Civic 2015",
         "marca": "Honda",
         "modelo": "Civic",
-        "anio": 2020,
+        "anio": 2015,
         "km": 45000,
         "precio": 23500,
-        "img": "02.jpg",
-        "whatsapp": 1186745333
+        "whatsapp": 1186745333,
+        "imgs": ["05.jpg", "06.jpg", "07.jpg", "08.jpg"]
     },
     {
         "id": 3,
@@ -29,8 +29,8 @@
         "anio": 2017,
         "km": 97000,
         "precio": 14500,
-        "img": "03.jpg",
-        "whatsapp": 1146354756
+        "whatsapp": 1146354756,
+        "imgs": ["09.jpg", "10.jpg", "11.jpg"]
     },
     {
         "id": 4,
@@ -40,8 +40,8 @@
         "anio": 2019,
         "km": 61000,
         "precio": 21000,
-        "img": "04.jpg",
-        "whatsapp": 1186957685
+        "whatsapp": 1186957685,
+        "imgs": ["12.jpg", "13.jpg", "14.jpg"]
     },
     {
         "id": 5,
@@ -51,8 +51,8 @@
         "anio": 2016,
         "km": 120000,
         "precio": 18500,
-        "img": "05.jpg",
-        "whatsapp": 1109459933
+        "whatsapp": 1109459933,
+        "imgs": ["15.jpg", "16.jpg", "17.jpg"]
     },
     {
         "id": 6,
@@ -62,7 +62,7 @@
         "anio": 2018,
         "km": 78000,
         "precio": 25500,
-        "img": "06.jpg",
-        "whatsapp": 1144885564
+        "whatsapp": 1144885564,
+        "imgs": ["18.jpg", "19.jpg", "20.jpg"]
     }
 ]

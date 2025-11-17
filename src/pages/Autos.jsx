@@ -1,36 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Form, Button, Spinner } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import AutoCard from "../components/AutoCard";
 import autosData from "../data/autosventa.json";
-
-const Item = (props) => {
-    return (
-        <div className="card h-100 d-flex flex-column">
-            <img src={props.img} className="card-img-top" alt={props.titulo} />
-
-            <div className="card-body">
-                <h5 className="card-title">{props.titulo}</h5>
-                <p className="card-text">${props.precio}</p>
-            </div>
-
-            <div className="card-footer d-flex justify-content-between">
-                <a
-                    href={`https://wa.me/${props.whatsapp}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-dark btn-sm"
-                >
-                    WhatsApp
-                </a>
-
-
-                <Link className="btn btn-warning btn-sm" to={"/historial/" + props.id}>
-                    Ver Historial
-                </Link>
-            </div>
-        </div>
-    );
-};
 
 const Autos = () => {
     const [autos, setAutos] = useState([]);
@@ -96,13 +67,7 @@ const Autos = () => {
                 {filtered.length > 0 ? (
                     filtered.map(auto => (
                         <Col sm={6} md={4} className="pt-3" key={auto.id}>
-                            <Item
-                                titulo={auto.nombre}
-                                img={"/imagenes/" + auto.img}
-                                precio={auto.precio}
-                                id={auto.id}
-                                whatsapp={auto.whatsapp}
-                            />
+                            <AutoCard auto={auto} />
                         </Col>
                     ))
                 ) : (
