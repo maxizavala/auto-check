@@ -11,6 +11,7 @@ import Signin from './pages/Signin';
 import AutoDetail from './pages/AutoDetail';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
+import Autos from './pages/Autos';
 import usersData from "./data/users.json";
 
 
@@ -34,6 +35,7 @@ const App = () => {
                     <Route path="/" element={ <Home /> } />
                     <Route path="/login" element={ <Login /> } />
                     <Route path="/registrar" element={ <Signin /> } />
+                    <Route path="/autos" element={ <Autos /> } />
                     
                     <Route
                         path="/perfil"

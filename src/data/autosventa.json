@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "nombre": "Toyota Corolla 2018",
+        "marca": "Toyota",
+        "modelo": "Corolla",
+        "anio": 2018,
+        "km": 82000,
+        "precio": 16500,
+        "img": "01.jpg",
+        "whatsapp": 1122334455
+    },
+    {
+        "id": 2,
+        "nombre": "Honda Civic 2020",
+        "marca": "Honda",
+        "modelo": "Civic",
+        "anio": 2020,
+        "km": 45000,
+        "precio": 23500,
+        "img": "02.jpg",
+        "whatsapp": 1186745333
+    },
+    {
+        "id": 3,
+        "nombre": "Ford Focus 2017",
+        "marca": "Ford",
+        "modelo": "Focus",
+        "anio": 2017,
+        "km": 97000,
+        "precio": 14500,
+        "img": "03.jpg",
+        "whatsapp": 1146354756
+    },
+    {
+        "id": 4,
+        "nombre": "Volkswagen Golf 2019",
+        "marca": "Volkswagen",
+        "modelo": "Golf",
+        "anio": 2019,
+        "km": 61000,
+        "precio": 21000,
+        "img": "04.jpg",
+        "whatsapp": 1186957685
+    },
+    {
+        "id": 5,
+        "nombre": "Audi A3 2016",
+        "marca": "Audi",
+        "modelo": "A3",
+        "anio": 2016,
+        "km": 120000,
+        "precio": 18500,
+        "img": "05.jpg",
+        "whatsapp": 1109459933
+    },
+    {
+        "id": 6,
+        "nombre": "BMW Serie 1 2018",
+        "marca": "BMW",
+        "modelo": "Serie 1",
+        "anio": 2018,
+        "km": 78000,
+        "precio": 25500,
+        "img": "06.jpg",
+        "whatsapp": 1144885564
+    }
+]
