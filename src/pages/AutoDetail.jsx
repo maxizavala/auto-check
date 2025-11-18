@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Button, Modal, Form, Container } from "react-bootstrap";
+import { Button, Modal, Form, Container, Accordion, Table } from "react-bootstrap";
 import { useAuth } from "../context/AuthContext";
 import usersData from "../data/users.json";
 
@@ -82,6 +82,7 @@ const AutoDetail = () => {
 
     const isOwner = user && car.owner === user.username;
 
+    // Agrupación igual a la original
     const grouped = CATEGORIES.reduce((acc, cat) => {
         acc[cat] = services
             .filter((s) => s.category === cat)
@@ -99,39 +100,64 @@ const AutoDetail = () => {
     };
 
     return (
-        <Container>
-            <h2 className="mt-4 mb-4">
+        <Container className="mt-4">
+            <h2 className="mb-4">
                 {car.brand} {car.model} - {car.year} ({car.plate})
             </h2>
 
             {isOwner && (
-                <Button variant="success" onClick={() => setShowModal(true)}>
+                <Button
+                    variant="warning"
+                    className="mb-3 text-dark fw-bold"
+                    onClick={() => setShowModal(true)}
+                >
                     + Agregar servicio
                 </Button>
             )}
 
             {services.length === 0 && <p className="mt-4">Sin historial.</p>}
 
-            {Object.entries(grouped).map(([cat, items]) =>
-                items.length > 0 ? (
-                    <div key={cat} className="mt-4">
-                        <h3>{cat}</h3>
-                        <ul>
-                            {items.map((srv) => (
-                                <li key={srv.id}>
-                                    <strong>{srv.date}</strong> — {srv.description}
-                                    {srv.km && <> — {srv.km} km</>}
-                                    {" — Taller: "}
-                                    {getTallerName(srv.tallerId)}
-                                    {" — "}
-                                    {srv.validado ? "✅ Validado" : "❌ Pendiente"}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                ) : null
-            )}
+            <Accordion alwaysOpen>
+                {Object.entries(grouped).map(([cat, items], index) =>
+                    items.length > 0 ? (
+                        <Accordion.Item eventKey={index.toString()} key={cat}>
+                            <Accordion.Header>{cat}</Accordion.Header>
+                            <Accordion.Body>
+                                <Table striped bordered hover>
+                                    <thead>
+                                        <tr>
+                                            <th>Fecha</th>
+                                            <th>Descripción</th>
+                                            <th>KMs</th>
+                                            <th>Taller</th>
+                                            <th>Validación</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {items.map((srv) => (
+                                            <tr key={srv.id}>
+                                                <td>{srv.date}</td>
+                                                <td>{srv.description}</td>
+                                                <td>{srv.km || "-"}</td>
+                                                <td>{getTallerName(srv.tallerId)}</td>
+                                                <td>
+                                                    {srv.validado && (
+                                                        <span className="text-success fw-bold">
+                                                            ✔ Validado
+                                                        </span>
+                                                    )}
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </Table>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    ) : null
+                )}
+            </Accordion>
 
+            {/* Modal */}
             <Modal
                 show={showModal && isOwner}
                 onHide={() => setShowModal(false)}
@@ -195,7 +221,7 @@ const AutoDetail = () => {
                             >
                                 <option value="">Seleccionar...</option>
                                 {talleres.map((t) => (
-                                    <option key={t.id} value={t.id.toString()}>
+                                    <option key={t.id} value={t.id}>
                                         {t.nombreFantasia || t.username}
                                     </option>
                                 ))}
@@ -209,7 +235,8 @@ const AutoDetail = () => {
                         Cancelar
                     </Button>
                     <Button
-                        variant="success"
+                        variant="warning"
+                        className="text-dark fw-bold"
                         onClick={handleSave}
                         disabled={!category || !description || !date || !tallerId}
                     >
@@ -222,6 +249,7 @@ const AutoDetail = () => {
 };
 
 export default AutoDetail;
+
 
 
 
