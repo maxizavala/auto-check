@@ -74,7 +74,7 @@ const Garage = () => {
                                     variant="dark"
                                     onClick={() => navigate(`/auto/${car.id}`)}
                                 >
-                                    Ver detalles
+                                    Ver historial
                                 </Button>
                             </Card.Body>
                         </Card>

@@ -31,7 +31,11 @@ const Menu = () => {
                     <Nav.Link as={Link} to="/">Buscá un auto</Nav.Link>
                     <Nav.Link as={Link} to="autos">Comprá un auto</Nav.Link>
                     <Nav.Link as={Link} to="perfil">Mi Perfil</Nav.Link>
-                    <Nav.Link as={Link} to="garage">Mi Garage</Nav.Link>
+
+                    <Nav.Link as={Link} to={user?.tipo === "taller" ? "/taller" : "/garage"}>
+                        Mi Garage
+                    </Nav.Link>
+
                     {user?.tipo === "admin" && (
                         <Nav.Link as={Link} to="/admin">Ir al Panel</Nav.Link>
                     )}
