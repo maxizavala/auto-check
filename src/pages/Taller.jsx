@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Container } from "react-bootstrap";
+import { Button, Container, Row, Col, Card, Badge } from "react-bootstrap";
 import { useAuth } from "../context/AuthContext";
 
 const Taller = () => {
@@ -42,42 +42,91 @@ const Taller = () => {
     const validados = services.filter(s => s.validado);
 
     return (
-        <Container>
-            <h2 className="mt-4 mb-4">Panel del Taller</h2>
+        <Container className="mt-4" style={{ maxWidth: "900px" }}>
+            <h4 className="mt-4 mb-3">
+                Servicios pendientes ({pendientes.length})
+            </h4>
 
-            <h4 className="mt-4">🟡 Servicios pendientes de validación</h4>
-            {pendientes.length === 0 && <p>No hay servicios pendientes.</p>}
-            <ul>
+            {pendientes.length === 0 && (
+                <p>No hay servicios pendientes.</p>
+            )}
+
+            <Row xs={1} className="g-3">
                 {pendientes.map(s => (
-                    <li key={s.id} className="mb-2">
-                        <strong>{s.date}</strong> — {s.category}: {s.description} <br />
-                        Auto: {getCarInfo(s.carId)} — Dueño: {getOwnerName(s.carId)} <br />
-                        <Button
-                            variant="success"
-                            size="sm"
-                            className="mt-1"
-                            onClick={() => handleValidate(s.id)}
-                        >
-                            Validar
-                        </Button>
-                    </li>
-                ))}
-            </ul>
+                    <Col key={s.id}>
+                        <Card className="shadow-sm border-0 rounded-3">
+                            <Card.Body>
+                                <div className="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 className="mb-0">
+                                        {s.category}{" "}
+                                    </h5>
+                                    <small className="text-muted">{s.date}</small>
+                                </div>
 
-            <h4 className="mt-5">🟢 Servicios validados</h4>
-            {validados.length === 0 && <p>No hay servicios validados.</p>}
-            <ul>
-                {validados.map(s => (
-                    <li key={s.id} className="mb-2">
-                        <strong>{s.date}</strong> — {s.category}: {s.description} <br />
-                        Auto: {getCarInfo(s.carId)} — Dueño: {getOwnerName(s.carId)} <br />
-                        ✅ Validado
-                    </li>
+                                <p className="mb-1">
+                                    <strong>Descripción:</strong> {s.description}
+                                </p>
+
+                                <p className="mb-1">
+                                    <strong>Auto:</strong> {getCarInfo(s.carId)}
+                                </p>
+
+                                <p className="mb-3">
+                                    <strong>Dueño:</strong> {getOwnerName(s.carId)}
+                                </p>
+
+                                <Button
+                                    variant="warning"
+                                    onClick={() => handleValidate(s.id)}
+                                >
+                                    Validar
+                                </Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
                 ))}
-            </ul>
+            </Row>
+
+            <h4 className="mt-5 mb-3">
+                Servicios validados ({validados.length})
+            </h4>
+
+            {validados.length === 0 && (
+                <p>No hay servicios validados.</p>
+            )}
+
+            <Row xs={1} className="g-3 mb-5">
+                {validados.map(s => (
+                    <Col key={s.id}>
+                        <Card className="shadow-sm border-0 rounded-3 bg-light">
+                            <Card.Body>
+                                <div className="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 className="mb-0">
+                                        {s.category}{" "}
+                                    </h5>
+                                    <small className="text-muted">{s.date}</small>
+                                </div>
+
+                                <p className="mb-1">
+                                    <strong>Descripción:</strong> {s.description}
+                                </p>
+
+                                <p className="mb-1">
+                                    <strong>Auto:</strong> {getCarInfo(s.carId)}
+                                </p>
+
+                                <p className="mb-0">
+                                    <strong>Dueño:</strong> {getOwnerName(s.carId)}
+                                </p>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                ))}
+            </Row>
         </Container>
     );
 };
 
 export default Taller;
+
 
