@@ -1,16 +1,80 @@
-# React + Vite
+# AutoCheck
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 Descripción
 
-Currently, two official plugins are available:
+Este proyecto es una plataforma web que conecta **usuarios** con **talleres mecánicos** y es administrada por un **administrador**. Permite gestionar autos, servicios realizados, talleres registrados y un historial completo de mantenimiento.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 ¿Qué problema resuelve?
 
-## React Compiler
+* Facilita que un **usuario** cargue y vea el estado de sus autos y servicios.
+* Permite que un **taller** valide servicios realizados sobre los autos.
+* Provee al **administrador** herramientas para gestionar talleres y visualizar métricas.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+En resumen: organiza y centraliza toda la información del mantenimiento vehicular.
 
-## Expanding the ESLint configuration
+## 🧰 Tecnologías utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **React** (Vite)
+* **React Router**
+* **Context API** 
+* **React-Bootstrap**
+
+## ▶️ Cómo correr el proyecto desde GitHub
+
+1. Clonar el repositorio:
+
+   ```bash
+   git clone https://github.com/tuusuario/tuproyecto.git
+   ```
+2. Entrar al directorio del proyecto:
+
+   ```bash
+   cd tuproyecto
+   ```
+3. Instalar dependencias:
+
+   ```bash
+   npm install
+   ```
+4. Iniciar el servidor de desarrollo:
+
+   ```bash
+   npm run dev
+   ```
+
+## 👥 Ejemplos de usabilidad
+
+### 👤 Usuario
+
+* Se registra o inicia sesión.
+* Carga sus autos.
+* Agrega servicios realizados.
+* Ve qué servicios fueron **validados por el taller**.
+* Gestiona su historial automotor de forma simple.
+
+### 🔧 Taller
+
+* Inicia sesión con una cuenta de taller.
+* Puede ver autos y servicios cargados por usuarios.
+* Valida servicios realizados.
+* Mantiene un historial de trabajos realizados.
+
+### 🛠️ Administrador
+
+* Inicia sesión como admin.
+* Puede **agregar nuevos talleres**, gestionar los existentes.
+* Visualiza **métricas** del sistema:
+
+  * cantidad de usuarios
+  * autos cargados
+  * talleres activos
+  * servicios validados
+
+## 🔑 Usuarios de prueba
+
+| Rol     | Usuario          | Contraseña   |
+| ------- | ---------------- | ------------ |
+| Admin   | **maxi**         | **zeta**     |
+| Usuario | **pepe64**       | **pepe123**  |
+| Taller  | **taller_mario** | **mario123** |
+
