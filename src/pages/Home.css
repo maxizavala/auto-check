@@ -1,42 +1,145 @@
 .hero-section {
-    position: relative;
-    height: 80vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    }
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    padding: 1rem;
+  position: relative;
+  z-index: 2;
+  max-width: 980px;
+  padding: 1rem;
 }
 
-.home-card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.hero-title {
+  font-size: 2.5rem;
+  line-height: 1.05;
 }
 
-.home-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+.hero-sub {
+  opacity: 0.95;
+}
+
+.hero-input {
+  max-width: 420px;
+  min-width: 180px;
+}
+
+.hero-btn {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.feature-card {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  background: #fff;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.feature-number {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.audience-card {
+  border-radius: 10px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  background: #fff;
+}
+
+.audience-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.stats-row {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.stats-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.home-wrapper {
+  background: #f7f7f7;
+  min-height: 100vh;
+}
+
+.container,
+.container-fluid {
+  max-width: 1100px;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .feature-number {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-input {
+    max-width: 220px;
+  }
+
+  .stats-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.section-header h2 {
+  font-size: 2rem;
+}
+
+.section-header p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-divider {
+  margin: 4rem 0;
+  border: none;
+  height: 1px;
+  background: rgba(0,0,0,0.08);
 }
