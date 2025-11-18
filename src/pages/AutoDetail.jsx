@@ -82,7 +82,6 @@ const AutoDetail = () => {
 
     const isOwner = user && car.owner === user.username;
 
-    // Agrupación igual a la original
     const grouped = CATEGORIES.reduce((acc, cat) => {
         acc[cat] = services
             .filter((s) => s.category === cat)
@@ -157,7 +156,6 @@ const AutoDetail = () => {
                 )}
             </Accordion>
 
-            {/* Modal */}
             <Modal
                 show={showModal && isOwner}
                 onHide={() => setShowModal(false)}
